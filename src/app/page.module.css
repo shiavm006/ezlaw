@@ -1,30 +1,19 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+  --gray-rgb: 255, 255, 255;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+  --button-primary-hover: #ccc;
+  --button-secondary-hover: #1a1a1a;
 
   display: grid;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
+  min-height: 100vh;
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
 }
 
 .main {
@@ -161,8 +150,86 @@ a.secondary {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+.logo {
+  filter: invert();
+}
+
+.heroWrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: url('/background.jpg') center center/cover no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  background: #000;
+  color: #fff;
+  margin-left: 60px;
+  padding: 60px 48px 48px 48px;
+  max-width: 600px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.heroTitle {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  white-space: pre-line;
+}
+
+.heroDesc {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.heroButton {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 32px;
+  padding: 16px 40px;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  width: fit-content;
+}
+
+.heroButton:hover {
+  background: #e5e5e5;
+}
+
+@media (max-width: 900px) {
+  .heroContent {
+    margin-left: 0;
+    padding: 32px 16px;
+    max-width: 100vw;
+  }
+  .heroTitle {
+    font-size: 40px;
+  }
+  .heroDesc {
+    font-size: 16px;
   }
 }

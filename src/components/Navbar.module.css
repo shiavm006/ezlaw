@@ -1,0 +1,111 @@
+.navbar {
+  width: 100vw;
+  height: 64px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #e5e5e5;
+}
+
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.loginBtn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.2s;
+  padding: 8px 16px;
+}
+
+.loginBtn:hover {
+  color: #e5e5e5;
+}
+
+.signupBtn {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 32px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.signupBtn:hover {
+  background: #e5e5e5;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 20px;
+    height: 56px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .links {
+    gap: 20px;
+  }
+  .link {
+    font-size: 14px;
+  }
+  .authButtons {
+    gap: 12px;
+  }
+  .loginBtn, .signupBtn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 0 12px;
+  }
+  .links {
+    gap: 16px;
+  }
+  .authButtons {
+    gap: 8px;
+  }
+} 

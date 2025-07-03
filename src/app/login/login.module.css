@@ -1,0 +1,331 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px;
+  max-width: 500px;
+}
+
+.brand {
+  margin-bottom: 60px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.formContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ccc;
+}
+
+.input {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #555;
+}
+
+.input::placeholder {
+  color: #666;
+}
+
+.forgotPassword {
+  text-align: right;
+  margin-top: -16px;
+  margin-bottom: 8px;
+}
+
+.forgotPassword a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgotPassword a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.loginBtn {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.loginBtn:hover {
+  background: #e5e5e5;
+}
+
+.loginBtn:disabled {
+  background: #333;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.signupLink {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.signupLink a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.signupLink a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  text-align: center;
+  position: relative;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #333;
+  z-index: 1;
+}
+
+.divider span {
+  background: #000;
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.googleBtn {
+  background: #fff;
+  color: #333;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.googleBtn:hover {
+  background: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightSection {
+  flex: 1;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rightSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" fill-opacity="0.02"/><circle cx="75" cy="75" r="1" fill="%23ffffff" fill-opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.testimonialContent {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  gap: -8px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #333, #555);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: 3px solid #000;
+  margin-left: -8px;
+  position: relative;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.testimonialTitle {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.testimonialText {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .leftSection {
+    padding: 20px 24px;
+    max-width: none;
+  }
+  
+  .rightSection {
+    min-height: 300px;
+    padding: 40px 24px;
+  }
+  
+  .formContainer {
+    max-width: none;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .leftSection {
+    padding: 20px 16px;
+  }
+  
+  .avatars {
+    gap: -4px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin-left: -4px;
+  }
+}
+
+.demoCredentials {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(30, 58, 95, 0.1);
+  border: 1px solid rgba(30, 58, 95, 0.3);
+  border-radius: 8px;
+}
+
+.demoCredentials h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: #1e3a5f;
+}
+
+.credentialsList p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.credentialsList strong {
+  color: #fff;
+} 
