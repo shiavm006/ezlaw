@@ -288,7 +288,7 @@ export default function AdminDashboard() {
       {/* Sidebar */}
       <aside className={styles.sidebar}>
         <div className={styles.logo}>
-          <h2>EzLaw Admin</h2>
+          <h2>Ezaw Admin</h2>
         </div>
         
         <div className={styles.sidebarMain}>

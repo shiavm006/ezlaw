@@ -4,90 +4,74 @@ export default function ContactSection() {
   return (
     <section className={styles.contactSection} id="contact">
       <div className={styles.container}>
-        <div className={styles.left}>
-          <h2 className={styles.heading}>
-            {"CONTACT\nKNOLL &\nWALTERS"}
-          </h2>
+        <div className={styles.header}>
+          <h2 className={styles.title}>Contact</h2>
+          <p className={styles.subtitle}>
+            Get in touch for confidential legal assistance.
+          </p>
         </div>
         
-        <div className={styles.right}>
-          <div className={styles.addressSection}>
-            <h3 className={styles.addressTitle}>OUR ADDRESS</h3>
-            <div className={styles.addressInfo}>
-              <p>500 Terry Francine St. San Francisco, CA 94158</p>
-              <p><span className={styles.label}>Email:</span> info@mysite.com</p>
-              <p><span className={styles.label}>Tel:</span> 123-456-7890</p>
-              <a href="#" className={styles.findUsLink}>Click Here to Find Us</a>
+        <div className={styles.content}>
+          <div className={styles.contactInfo}>
+            <div className={styles.infoItem}>
+              <span className={styles.label}>Email</span>
+              <a href="mailto:info@ezaw.com" className={styles.value}>info@ezaw.com</a>
+            </div>
+            <div className={styles.infoItem}>
+              <span className={styles.label}>Phone</span>
+              <a href="tel:123-456-7890" className={styles.value}>123-456-7890</a>
+            </div>
+            <div className={styles.infoItem}>
+              <span className={styles.label}>Address</span>
+              <span className={styles.value}>500 Terry Francine St.<br />San Francisco, CA 94158</span>
             </div>
           </div>
           
-          <div className={styles.formSection}>
-            <p className={styles.formDescription}>
-              For any general inquiries, please fill in the following contact form:
-            </p>
-            
+          <div className={styles.formContainer}>
             <form className={styles.form}>
               <div className={styles.row}>
-                <div className={styles.fieldGroup}>
-                  <label htmlFor="firstName">First Name *</label>
-                  <input 
-                    id="firstName" 
-                    name="firstName" 
-                    type="text" 
-                    required 
-                    className={styles.input}
-                  />
-                </div>
-                <div className={styles.fieldGroup}>
-                  <label htmlFor="lastName">Last Name *</label>
-                  <input 
-                    id="lastName" 
-                    name="lastName" 
-                    type="text" 
-                    required 
-                    className={styles.input}
-                  />
-                </div>
-              </div>
-              
-              <div className={styles.fieldGroup}>
-                <label htmlFor="email">Email *</label>
                 <input 
-                  id="email" 
-                  name="email" 
-                  type="email" 
-                  required 
-                  className={styles.input}
-                />
-                <div className={styles.emailHint}>
-                  * Enter an email address like example@mysite.com
-                </div>
-              </div>
-              
-              <div className={styles.fieldGroup}>
-                <label htmlFor="subject">Subject *</label>
-                <input 
-                  id="subject" 
-                  name="subject" 
+                  name="firstName" 
                   type="text" 
+                  placeholder="First Name"
+                  required 
+                  className={styles.input}
+                />
+                <input 
+                  name="lastName" 
+                  type="text" 
+                  placeholder="Last Name"
                   required 
                   className={styles.input}
                 />
               </div>
               
-              <div className={styles.fieldGroup}>
-                <label htmlFor="message">Message *</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows={4} 
-                  required 
-                  className={styles.textarea}
-                />
-              </div>
+              <input 
+                name="email" 
+                type="email" 
+                placeholder="Email"
+                required 
+                className={styles.input}
+              />
+              
+              <input 
+                name="subject" 
+                type="text" 
+                placeholder="Subject"
+                required 
+                className={styles.input}
+              />
+              
+              <textarea 
+                name="message" 
+                placeholder="Message"
+                rows={4} 
+                required 
+                className={styles.textarea}
+              />
               
               <button type="submit" className={styles.submitBtn}>
-                Submit
+                Send Message
               </button>
             </form>
           </div>

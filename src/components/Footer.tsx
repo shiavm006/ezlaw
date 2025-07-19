@@ -6,10 +6,9 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.topSection}>
           <div className={styles.brandColumn}>
-            <div className={styles.logo}>M. Torres</div>
+            <div className={styles.logo}>Ezaw</div>
             <p className={styles.description}>
-              Providing compassionate and professional family mediation services. 
-              We help families navigate difficult times with dignity and respect.
+              Providing confidential legal assistance for those who need support but feel unable to speak up due to family or social pressure.
             </p>
             <div className={styles.socialLinks}>
               <a href="#" aria-label="Facebook" className={styles.socialIcon}>FB</a>
@@ -19,25 +18,14 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className={styles.servicesColumn}>
-            <h4 className={styles.columnTitle}>Our Services</h4>
-            <ul className={styles.linkList}>
-              <li><a href="#services">Family Mediation</a></li>
-              <li><a href="#services">Divorce Mediation</a></li>
-              <li><a href="#services">Conflict Resolution</a></li>
-              <li><a href="#services">Legal Consultation</a></li>
-              <li><a href="#services">Support Services</a></li>
-            </ul>
-          </div>
-          
-          <div className={styles.resourcesColumn}>
-            <h4 className={styles.columnTitle}>Resources</h4>
+          <div className={styles.linksColumn}>
+            <h4 className={styles.columnTitle}>Quick Links</h4>
             <ul className={styles.linkList}>
               <li><a href="#about">About Us</a></li>
               <li><a href="#vision">Our Vision</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#faqs">FAQs</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="/file-case">File Your Case</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Sign Up</a></li>
             </ul>
           </div>
           
@@ -50,7 +38,7 @@ export default function Footer() {
               </div>
               <div className={styles.contactItem}>
                 <span className={styles.contactLabel}>Email:</span>
-                <span>info@mtorres.com</span>
+                <span>info@ezaw.com</span>
               </div>
               <div className={styles.contactItem}>
                 <span className={styles.contactLabel}>Address:</span>
@@ -78,7 +66,7 @@ export default function Footer() {
             <a href="#disclaimer">Legal Disclaimer</a>
           </div>
           <div className={styles.copyright}>
-            © 2024 M. Torres Family Mediation Services. All rights reserved.
+            © 2024 Ezaw Legal Services. All rights reserved.
           </div>
         </div>
       </div>

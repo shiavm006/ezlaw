@@ -1,6 +1,6 @@
 .footer {
   width: 100vw;
-  background: #1a1a1a;
+  background: #000;
   color: #fff;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   border-top: 1px solid #333;
@@ -9,26 +9,26 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 60px;
 }
 
 .topSection {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 60px;
-  padding: 60px 0 40px 0;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+  padding: 80px 0 60px 0;
   border-bottom: 1px solid #333;
 }
 
 .brandColumn {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .logo {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 400;
   color: #fff;
   margin-bottom: 8px;
 }
@@ -37,7 +37,7 @@
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
-  color: #ccc;
+  color: #e5e5e5;
   margin: 0;
 }
 
@@ -48,24 +48,26 @@
 }
 
 .socialIcon {
-  font-size: 24px;
+  font-size: 16px;
   text-decoration: none;
-  transition: transform 0.2s, opacity 0.2s;
-  opacity: 0.8;
+  color: #e5e5e5;
+  transition: color 0.2s;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .socialIcon:hover {
-  transform: translateY(-2px);
-  opacity: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .columnTitle {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: #fff;
-  margin: 0 0 20px 0;
+  margin: 0 0 24px 0;
   padding-bottom: 8px;
-  border-bottom: 2px solid #444;
+  border-bottom: 1px solid #333;
 }
 
 .linkList {
@@ -78,16 +80,15 @@
 }
 
 .linkList a {
-  color: #ccc;
+  color: #e5e5e5;
   text-decoration: none;
   font-size: 15px;
   font-weight: 300;
-  transition: color 0.2s, padding-left 0.2s;
+  transition: color 0.2s;
 }
 
 .linkList a:hover {
   color: #fff;
-  padding-left: 4px;
 }
 
 .contactInfo {
@@ -104,13 +105,13 @@
 }
 
 .contactLabel {
-  font-weight: 500;
+  font-weight: 400;
   color: #fff;
 }
 
 .contactItem span:last-child,
 .contactItem div:last-child {
-  color: #ccc;
+  color: #e5e5e5;
   font-weight: 300;
   line-height: 1.4;
 }
@@ -119,19 +120,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0;
+  padding: 40px 0;
   flex-wrap: wrap;
   gap: 20px;
 }
 
 .legalLinks {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
 .legalLinks a {
-  color: #ccc;
+  color: #e5e5e5;
   text-decoration: none;
   font-size: 14px;
   font-weight: 300;
@@ -144,7 +145,7 @@
 
 .copyright {
   font-size: 14px;
-  color: #888;
+  color: #999;
   font-weight: 300;
 }
 
@@ -152,29 +153,29 @@
 @media (max-width: 1000px) {
   .topSection {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 60px;
   }
 }
 
 @media (max-width: 700px) {
   .container {
-    padding: 0 20px;
+    padding: 0 40px;
   }
   
   .topSection {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 40px 0 30px 0;
+    gap: 40px;
+    padding: 60px 0 40px 0;
   }
   
   .bottomSection {
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 0;
+    padding: 30px 0;
   }
   
   .legalLinks {
-    gap: 16px;
+    gap: 24px;
   }
   
   .logo {
@@ -184,7 +185,7 @@
 
 @media (max-width: 500px) {
   .container {
-    padding: 0 16px;
+    padding: 0 24px;
   }
   
   .socialLinks {
@@ -192,11 +193,12 @@
   }
   
   .socialIcon {
-    font-size: 20px;
+    font-size: 14px;
+    padding: 6px;
   }
   
   .legalLinks {
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
   }
 } 

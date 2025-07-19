@@ -11,11 +11,13 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   const [isMounted, setIsMounted] = useState(false);
+  const [currentPathname, setCurrentPathname] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+    setCurrentPathname(pathname);
+  }, [pathname]);
 
   // Show loading or basic layout during hydration
   if (!isMounted) {
@@ -26,8 +28,11 @@ export default function ClientLayout({
     );
   }
   
-  // Check if we're on dashboard or admin routes
-  const hideNavFooter = pathname?.startsWith("/dashboard") || pathname?.startsWith("/admin");
+  // Check if we're on dashboard, admin, login, or signup routes
+  const hideNavFooter = currentPathname?.startsWith("/dashboard") || 
+                       currentPathname?.startsWith("/admin") || 
+                       currentPathname?.startsWith("/login") || 
+                       currentPathname?.startsWith("/signup");
 
   return (
     <div suppressHydrationWarning={true}>

@@ -1,8 +1,5 @@
 import styles from "./page.module.css";
-import AboutSection from "../components/AboutSection";
 import VisionSection from "../components/VisionSection";
-import ServicesSection from "../components/ServicesSection";
-import ContactSection from "../components/ContactSection";
 import Link from "next/link";
 
 export default function Home() {
@@ -20,10 +17,7 @@ export default function Home() {
           <Link href="/file-case" className={styles.heroButton}>File Your Case</Link>
         </div>
       </div>
-      <AboutSection />
       <VisionSection />
-      <ServicesSection />
-      <ContactSection />
     </>
   );
 }

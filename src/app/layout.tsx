@@ -6,7 +6,7 @@ import ClientLayout from "./ClientLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EzLaw",
+  title: "Ezaw",
   description: "Legal Services Made Easy",
 };
 
