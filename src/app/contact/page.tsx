@@ -7,7 +7,7 @@ export default function ContactPage() {
         <div className={styles.header}>
           <h1 className={styles.title}>Contact Us</h1>
           <p className={styles.subtitle}>
-            Get in touch for confidential legal assistance. We're here to help you navigate your legal challenges with discretion and care.
+            Get in touch for confidential legal assistance. We&apos;re here to help you navigate your legal challenges with discretion and care.
           </p>
         </div>
         
@@ -66,7 +66,7 @@ export default function ContactPage() {
             <div className={styles.supportSection}>
               <h2 className={styles.sectionTitle}>Emergency Support</h2>
               <p className={styles.sectionDesc}>
-                If you're in immediate danger or need urgent assistance, please contact these resources.
+                If you&apos;re in immediate danger or need urgent assistance, please contact these resources.
               </p>
               
               <div className={styles.emergencyItems}>
@@ -103,7 +103,7 @@ export default function ContactPage() {
             <div className={styles.formHeader}>
               <h2 className={styles.formTitle}>Send us a Message</h2>
               <p className={styles.formDesc}>
-                Fill out the form below and we'll get back to you as soon as possible. All information is kept confidential.
+                Fill out the form below and we&apos;ll get back to you as soon as possible. All information is kept confidential.
               </p>
             </div>
             

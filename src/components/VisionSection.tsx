@@ -47,7 +47,7 @@ export default function VisionSection() {
             </div>
             <h3 className={styles.cardTitle}>Empowering Voices</h3>
             <p className={styles.cardText}>
-              Whether it's accessing simplified explanations of laws, understanding their rights, or connecting with pro bono legal aid, Ezaw empowers users to take action and reclaim their voice through technology.
+              Whether it&apos;s accessing simplified explanations of laws, understanding their rights, or connecting with pro bono legal aid, Ezaw empowers users to take action and reclaim their voice through technology.
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function VisionSection() {
           <div className={styles.missionContent}>
             <h3 className={styles.missionTitle}>More Than a Service</h3>
             <p className={styles.missionText}>
-              Ezaw is more than a digital legal service — it's a movement to redefine justice. By combining transparency, empathy, and innovation, we aim to build a legal ecosystem where public trust is restored, silence is replaced by courage, and access to justice becomes a universal right, not a privilege.
+              Ezaw is more than a digital legal service — it&apos;s a movement to redefine justice. By combining transparency, empathy, and innovation, we aim to build a legal ecosystem where public trust is restored, silence is replaced by courage, and access to justice becomes a universal right, not a privilege.
             </p>
           </div>
         </div>

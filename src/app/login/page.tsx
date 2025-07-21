@@ -121,7 +121,7 @@ export default function LoginPage() {
           </button>
           
           <div className={styles.signupLink}>
-            Don't have an account? <Link href="/signup">Sign up</Link>
+            Don&apos;t have an account? <Link href="/signup">Sign up</Link>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@ export default function LoginPage() {
           </h2>
           
           <p className={styles.testimonialText}>
-            "The anonymous filing feature gave me the courage to seek help when I needed it most. The platform is incredibly secure and the legal team was professional and compassionate throughout my case."
+            &quot;The anonymous filing feature gave me the courage to seek help when I needed it most. The platform is incredibly secure and the legal team was professional and compassionate throughout my case.&quot;
           </p>
         </div>
       </div>

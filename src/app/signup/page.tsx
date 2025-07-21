@@ -114,7 +114,7 @@ export default function SignupPage() {
           </h2>
           
           <p className={styles.testimonialText}>
-            "The platform's commitment to privacy and security gave me the confidence to seek legal help. The anonymous filing option is a game-changer for people in vulnerable situations."
+            &quot;The platform&apos;s commitment to privacy and security gave me the confidence to seek legal help. The anonymous filing option is a game-changer for people in vulnerable situations.&quot;
           </p>
         </div>
       </div>

@@ -2,7 +2,6 @@
 
 import styles from "./cases.module.css";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 interface Case {
   id: string;
@@ -23,10 +22,8 @@ interface Case {
 
 
 export default function CasesManagement() {
-  const router = useRouter();
   const [cases, setCases] = useState<Case[]>([]);
   const [filteredCases, setFilteredCases] = useState<Case[]>([]);
-  const [selectedCase, setSelectedCase] = useState<Case | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
