@@ -28,17 +28,17 @@ export default function ClientLayout({
     );
   }
   
-  // Check if we're on dashboard, admin, login, or signup routes
-  const hideNavFooter = currentPathname?.startsWith("/dashboard") || 
-                       currentPathname?.startsWith("/admin") || 
-                       currentPathname?.startsWith("/login") || 
-                       currentPathname?.startsWith("/signup");
+  // Only show Navbar and Footer on home, about, and contact pages
+  const showNavFooter =
+    currentPathname === "/" ||
+    currentPathname === "/about" ||
+    currentPathname === "/contact";
 
   return (
     <div suppressHydrationWarning={true}>
-      {!hideNavFooter && <Navbar />}
+      {showNavFooter && <Navbar />}
       {children}
-      {!hideNavFooter && <Footer />}
+      {showNavFooter && <Footer />}
     </div>
   );
 } 
