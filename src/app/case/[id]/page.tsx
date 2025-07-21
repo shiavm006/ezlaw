@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import { useParams } from "next/navigation";
 
 export default function CaseDetailsPage() {
@@ -12,4 +14,4 @@ export default function CaseDetailsPage() {
       </p>
     </div>
   );
-} 
+}
