@@ -12,7 +12,7 @@ export default function Home() {
             {"Caring\nMediators\nfor You"}
           </h1>
           <p className={styles.heroDesc}>
-            At M. Torres, we provide confidential legal assistance for those who need support but feel unable to speak up due to family or social pressure. File your case anonymously and get the help you deserve.
+            At EzLaw, we provide confidential legal assistance for those who need support but feel unable to speak up due to family or social pressure. File your case anonymously and get the help you deserve.
           </p>
           <Link href="/file-case" className={styles.heroButton}>File Your Case</Link>
         </div>

@@ -1,10 +1,19 @@
+"use client";
+
 import styles from "./file-case.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import FileUpload from "../../components/FileUpload";
 
 export default function FileCasePage() {
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [caseId, setCaseId] = useState("");
+  const [isClient, setIsClient] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState<any[]>([]);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const generateCaseId = () => {
     const timestamp = Date.now().toString(36);
@@ -121,7 +130,7 @@ export default function FileCasePage() {
                 </label>
               </div>
 
-              {isAnonymous && caseId && (
+              {isClient && isAnonymous && caseId && (
                 <div className={styles.caseIdDisplay}>
                   <div className={styles.caseIdHeader}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -302,27 +311,15 @@ export default function FileCasePage() {
               
               <div className={styles.fieldGroup}>
                 <label htmlFor="evidence" className={styles.label}>Evidence/Documents</label>
-                <div className={styles.fileUpload}>
-                  <input 
-                    type="file" 
-                    id="evidence" 
-                    name="evidence" 
-                    multiple 
-                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                    className={styles.fileInput}
-                  />
-                  <label htmlFor="evidence" className={styles.fileLabel}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                      <polyline points="14,2 14,8 20,8"/>
-                    </svg>
-                    <span>Choose files or drag them here</span>
-                    <span className={styles.fileTypes}>PDF, Word documents, Images</span>
-                  </label>
-                  <p className={styles.fileHint}>
-                    Upload any relevant documents, photos, or evidence. All files are encrypted and secure.
-                  </p>
-                </div>
+                <FileUpload 
+                  onFilesChange={setUploadedFiles}
+                  maxFiles={10}
+                  maxFileSize={50}
+                  acceptedTypes={['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.txt']}
+                />
+                <p className={styles.fieldHint}>
+                  Upload any relevant documents, photos, or evidence. All files are encrypted and secure.
+                </p>
               </div>
 
               <div className={styles.fieldGroup}>
@@ -343,7 +340,7 @@ export default function FileCasePage() {
               <label htmlFor="consent" className={styles.checkboxLabel}>
                 <div className={styles.checkboxContent}>
                   <div className={styles.checkboxTitle}>
-                    I consent to M. Torres reviewing my case <span className={styles.required}>*</span>
+                    I consent to EzLaw reviewing my case <span className={styles.required}>*</span>
                   </div>
                   <div className={styles.checkboxDesc}>
                     I understand that all information will be kept confidential and I may be assigned a lawyer for assistance.

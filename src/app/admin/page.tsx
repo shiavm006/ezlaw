@@ -93,14 +93,6 @@ export default function AdminDashboard() {
       icon: "👥"
     },
     {
-      title: "Total Registered Lawyers",
-      value: "1,203",
-      change: "+45",
-      percentage: "+3.9%",
-      isPositive: true,
-      icon: "⚖️"
-    },
-    {
       title: "Cases Filed Today",
       value: "156",
       change: "+23",
@@ -123,6 +115,14 @@ export default function AdminDashboard() {
       percentage: "+2.3%",
       isPositive: true,
       icon: "✅"
+    },
+    {
+      title: "Anonymous Cases",
+      value: "1,234",
+      change: "+45",
+      percentage: "+3.8%",
+      isPositive: true,
+      icon: "🕵️"
     }
   ];
 
@@ -307,13 +307,7 @@ export default function AdminDashboard() {
               <span className={styles.navIcon}>👥</span>
               <span>User Management</span>
             </div>
-            <div 
-              className={`${styles.navItem} ${pathname === '/admin/lawyers' ? styles.active : ''}`}
-              onClick={() => navigateToPage('lawyers')}
-            >
-              <span className={styles.navIcon}>⚖️</span>
-              <span>Lawyer Management</span>
-            </div>
+
             <div 
               className={`${styles.navItem} ${pathname === '/admin/cases' ? styles.active : ''}`}
               onClick={() => navigateToPage('cases')}

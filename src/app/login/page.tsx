@@ -2,65 +2,77 @@
 
 import styles from "./login.module.css";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const router = useRouter();
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
     
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
     
-    // Simple authentication logic (in real app, this would be API calls)
-    if (email && password) {
-      // Store user data in localStorage
-      const userData = {
-        email: email,
-        name: email.split('@')[0], // Use email prefix as name
-        isAdmin: email.includes('admin') || email === 'admin@mtorres.com'
-      };
-      
-      localStorage.setItem('currentUser', JSON.stringify(userData));
-      
-      // Use Next.js router for navigation
-      if (userData.isAdmin) {
-        router.push('/admin');
-      } else {
-        router.push('/dashboard');
-      }
-    } else {
-      alert('Please enter both email and password');
-    }
+    // Demo credentials
+    const demoCredentials = {
+      admin: { email: 'admin@ezlaw.com', password: 'admin123', isAdmin: true },
+      user: { email: 'user@ezlaw.com', password: 'user123', isAdmin: false }
+    };
     
-    setIsLoading(false);
+    // Check credentials
+    const user = Object.values(demoCredentials).find(
+      cred => cred.email === email && cred.password === password
+    );
+    
+    setTimeout(() => {
+      setIsLoading(false);
+      
+      if (user) {
+        // Store user data
+        localStorage.setItem('currentUser', JSON.stringify({
+          email: user.email,
+          isAdmin: user.isAdmin,
+          name: email.split('@')[0]
+        }));
+        
+        // Redirect based on user type
+        if (user.isAdmin) {
+          router.push('/admin');
+        } else {
+          router.push('/dashboard');
+        }
+      } else {
+        setError("Invalid email or password");
+      }
+    }, 1000);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.leftSection}>
         <div className={styles.brand}>
-          <div className={styles.logo}>M. Torres</div>
+          <div className={styles.logo}>EzLaw</div>
         </div>
         
         <div className={styles.formContainer}>
-          <h1 className={styles.title}>Sign in to your account</h1>
+          <h1 className={styles.title}>Welcome Back</h1>
           
-          <form className={styles.form} onSubmit={handleLogin}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.fieldGroup}>
-              <label htmlFor="email" className={styles.label}>Email address</label>
+              <label htmlFor="email" className={styles.label}>Email</label>
               <input 
                 type="email" 
                 id="email" 
                 name="email" 
+                required 
                 className={styles.input}
                 placeholder="Enter your email"
-                required 
               />
             </div>
             
@@ -70,9 +82,9 @@ export default function LoginPage() {
                 type="password" 
                 id="password" 
                 name="password" 
+                required 
                 className={styles.input}
                 placeholder="Enter your password"
-                required 
               />
             </div>
             
@@ -80,30 +92,36 @@ export default function LoginPage() {
               <Link href="/forgot-password">Forgot your password?</Link>
             </div>
             
+            {error && <div className={styles.error}>{error}</div>}
+            
             <button type="submit" className={styles.loginBtn} disabled={isLoading}>
-              {isLoading ? 'Signing In...' : 'Sign In'}
-            </button>
-            
-            <div className={styles.signupLink}>
-              Don't have an account? <Link href="/signup">Sign up</Link>
-            </div>
-            
-            <div className={styles.divider}>
-              <span>Or continue with</span>
-            </div>
-            
-            <button type="button" className={styles.googleBtn}>
-              <span className={styles.googleIcon}>G</span>
-              Google
+              {isLoading ? "Signing in..." : "Sign In"}
             </button>
           </form>
-
+          
           <div className={styles.demoCredentials}>
             <h4>Demo Credentials:</h4>
             <div className={styles.credentialsList}>
-              <p><strong>User Account:</strong><br />user@mtorres.com / password123</p>
-              <p><strong>Admin Account:</strong><br />admin@mtorres.com / admin123</p>
+              <div className={styles.credentialItem}>
+                <strong>Admin:</strong> admin@ezlaw.com / admin123
+              </div>
+              <div className={styles.credentialItem}>
+                <strong>User:</strong> user@ezlaw.com / user123
+              </div>
             </div>
+          </div>
+          
+          <div className={styles.divider}>
+            <span>or</span>
+          </div>
+          
+          <button type="button" className={styles.googleBtn}>
+            <span className={styles.googleIcon}>G</span>
+            Continue with Google
+          </button>
+          
+          <div className={styles.signupLink}>
+            Don't have an account? <Link href="/signup">Sign up</Link>
           </div>
         </div>
       </div>
@@ -111,19 +129,17 @@ export default function LoginPage() {
       <div className={styles.rightSection}>
         <div className={styles.testimonialContent}>
           <div className={styles.avatars}>
-            <div className={styles.avatar}>U</div>
             <div className={styles.avatar}>S</div>
-            <div className={styles.avatar}>E</div>
-            <div className={styles.avatar}>R</div>
-            <div className={styles.avatar}>S</div>
-            <div className={styles.avatar}>!</div>
+            <div className={styles.avatar}>M</div>
+            <div className={styles.avatar}>L</div>
           </div>
           
-          <h2 className={styles.testimonialTitle}>Welcome back</h2>
+          <h2 className={styles.testimonialTitle}>
+            Continue your journey with EzLaw and access
+          </h2>
           
           <p className={styles.testimonialText}>
-            Continue your journey with M. Torres and access 
-            our comprehensive legal assistance services.
+            "The anonymous filing feature gave me the courage to seek help when I needed it most. The platform is incredibly secure and the legal team was professional and compassionate throughout my case."
           </p>
         </div>
       </div>

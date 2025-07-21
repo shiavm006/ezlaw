@@ -15,7 +15,7 @@ export default function AboutPage() {
           <div className={styles.column}>
             <h2 className={styles.columnTitle}>Our Mission</h2>
             <p className={styles.columnText}>
-              M. Torres specializes in peaceful family dispute resolution, focusing on divorce mediation. 
+              EzLaw specializes in peaceful family dispute resolution, focusing on divorce mediation. 
               Our experienced team fosters effective communication, ensuring swift conflict resolution while 
               prioritizing family well-being.
             </p>
